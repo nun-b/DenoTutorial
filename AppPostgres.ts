@@ -1,5 +1,5 @@
 // deno run --allow-net --allow-read AppPostgres.ts
-import { Application, Router  } from 'https://deno.land/x/oak/mod.ts'
+import { Application } from 'https://deno.land/x/oak/mod.ts'
 import { config } from "https://deno.land/x/dotenv/mod.ts"
 import router from './routers.ts'
 import NotFound from './pages/404.ts'
