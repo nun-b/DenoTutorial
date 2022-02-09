@@ -1,4 +1,4 @@
-// deno run --allow-net --allow-read AppPostgres.ts
+// deno run --allow-net --allow-read --unstable AppPostgres.ts
 import { Application } from 'https://deno.land/x/oak/mod.ts'
 import { config } from "https://deno.land/x/dotenv/mod.ts"
 import router from './routers.ts'
@@ -12,5 +12,5 @@ const app = new Application()
 app.use(router.routes())
 app.use(NotFound)
 
-console.log(`server :: ${host}:${port}`)
 await app.listen({ port })
+console.log(`server :: ${host}:${port}`)
