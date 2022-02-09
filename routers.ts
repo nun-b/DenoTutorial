@@ -1,6 +1,6 @@
 import { Router  } from 'https://deno.land/x/oak/mod.ts'
 import indexController from './controllers/indexController.ts'
-import { GetUser, GetUsers, PostUser, UpdateUser, DeleteUser } from './controllers/userController.ts'
+import { GetUser, GetUsers, PostUser, UpdateUser, DeleteUser } from './controllers/userPostgresController.ts'
 
 const router = new Router()
 router.get('/', indexController.main)
