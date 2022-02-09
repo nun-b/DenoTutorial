@@ -1,5 +1,4 @@
 // deno run --allow-net --allow-read AppPostgres.ts
-import { User } from '../types/userType.ts'
 import { dbPostgres } from '../configs/postgresDB.ts'
 import { Client } from 'https://deno.land/x/postgres/mod.ts'
 
@@ -146,6 +145,7 @@ const UpdateUser = async(ctx: any) => {
         await client.end();
     }
 }
+
 const DeleteUser = async(ctx: any) => {
     try {
         const result: any = await GetUser(ctx)
@@ -160,7 +160,7 @@ const DeleteUser = async(ctx: any) => {
 
             ctx.response.body = {
                 success: true,
-                data: result.rows
+                data: results.rows
             }
         }
     } catch (err) {
@@ -174,4 +174,4 @@ const DeleteUser = async(ctx: any) => {
     }
 }
 
-export { GetUser, GetUsers, PostUser, UpdateUser, DeleteUser}
+export { GetUser, GetUsers, PostUser, UpdateUser, DeleteUser }
